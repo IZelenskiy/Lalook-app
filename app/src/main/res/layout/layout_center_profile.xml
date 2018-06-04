@@ -122,8 +122,32 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/relLayout5"
             android:layout_below="@id/relLayout4"
+            android:id="@+id/relLayout5"
+            android:background="@drawable/white_grey_border_bottom">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tlUserProfileTabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/colorMainBackground"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="#5be5ad"
+                    app:tabIndicatorHeight="4dp"
+                    app:tabMode="fixed" />
+
+            </FrameLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relLayout6"
+            android:layout_below="@id/relLayout5"
             android:layout_marginBottom="50dp">
 
             <GridView

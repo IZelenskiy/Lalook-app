@@ -3,6 +3,7 @@ package net.lalook.Profile;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -14,11 +15,16 @@ import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import net.lalook.R;
 import net.lalook.utils.BottomNavigationViewHelper;
 
+import butterknife.BindView;
+
 
 public class ProfileActivity extends AppCompatActivity {
 
     private static final String TAG = "ProfileActivity";
     private static final int ACTIVITY_NUM = 3;
+
+    @BindView(R.id.tlUserProfileTabs)
+    TabLayout tlUserProfileTabs;
 
     private Context mContext = ProfileActivity.this;
 
@@ -30,6 +36,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         setupBottomNavigationView();
         setupToolbar();
+        //setupTabs();
     }
 
     private void setupToolbar() {
@@ -52,6 +59,7 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
+
     /**
      * BottomNavigationView setup
      */
@@ -65,6 +73,12 @@ public class ProfileActivity extends AppCompatActivity {
         Menu menu = bottomNavigationViewEx.getMenu();
         MenuItem menuItem = menu.getItem(ACTIVITY_NUM);
         menuItem.setChecked(true);
+    }
+
+    private void setupTabs() {
+        tlUserProfileTabs.addTab(tlUserProfileTabs.newTab().setText("Луки"));
+        tlUserProfileTabs.addTab(tlUserProfileTabs.newTab().setText("Инфо"));
+        tlUserProfileTabs.addTab(tlUserProfileTabs.newTab().setText("Отзывы"));
     }
 
     @Override
