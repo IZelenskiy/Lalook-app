@@ -15,5 +15,7 @@
 
     <color name="colorTextDark">#121212</color>
 
+    <color name="btn_default_light_normal">#00000000</color>
+    <color name="btn_default_light_pressed">#40ffffff</color>
 
 </resources>

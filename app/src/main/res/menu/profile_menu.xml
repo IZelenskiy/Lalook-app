@@ -18,6 +18,4 @@
         android:title="@string/more"
         app:showAsAction="ifRoom" />
 
-
-
 </menu>

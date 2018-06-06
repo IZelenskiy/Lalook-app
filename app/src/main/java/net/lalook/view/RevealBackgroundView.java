@@ -3,7 +3,6 @@ package net.lalook.view;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -28,7 +27,7 @@ public class RevealBackgroundView extends View {
 
     private Paint fillPaint;
     private int currentRadius;
-    ObjectAnimator revalAnimator;
+    ObjectAnimator revealAnimator;
 
     private int startLocationX;
     private int startLocationY;
@@ -71,17 +70,17 @@ public class RevealBackgroundView extends View {
         startLocationX = tapLocationOnScreen[0];
         startLocationY = tapLocationOnScreen[1];
 
-        revalAnimator = ObjectAnimator
+        revealAnimator = ObjectAnimator
                 .ofInt(this, "currentRadius", 0, getWidth() + getHeight())
                 .setDuration(FILL_TIME);
-        revalAnimator.setInterpolator(INTERPOLATOR);
-        revalAnimator.addListener(new AnimatorListenerAdapter() {
+        revealAnimator.setInterpolator(INTERPOLATOR);
+        revealAnimator.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
                 changeState(STATE_FINISHED);
             }
         });
-        revalAnimator.start();
+        revealAnimator.start();
     }
 
     public void setToFinishedFrame() {
